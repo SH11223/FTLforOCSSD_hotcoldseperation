@@ -394,12 +394,12 @@ struct queue_limits {
 	enum blk_zoned_model	zoned;
 };
 
-#ifdef CONFIG_BLK_DEV_ZONED
-
 struct blk_zone_report_hdr {
 	unsigned int	nr_zones;
 	u8		padding[60];
 };
+
+#ifdef CONFIG_BLK_DEV_ZONED
 
 extern int blkdev_report_zones(struct block_device *bdev,
 			       sector_t sector, struct blk_zone *zones,
